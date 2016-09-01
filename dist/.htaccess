@@ -1,0 +1,29 @@
+Options +FollowSymlinks
+Options -MultiViews
+RewriteEngine On
+#RewriteBase /
+Options -Indexes
+
+RewriteRule ^([0-9a-zA-Z]+)$ index.php?page=$1&%{QUERY_STRING} [NC,L]
+
+
+# and if it does not exist as a directory
+RewriteCond %{REQUEST_FILENAME} !-d
+# and if it does not exist as a file
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# remove www, http from the end
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=302,L]
+
+# remove index from the end
+#RewriteRule ^(.*)index\.php$ /$1 [R=302,NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=302,NC]
+
+
+DirectoryIndex index.php
+
+
+# Fix for infinite loops
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule .* - [L]
