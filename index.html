@@ -11,11 +11,16 @@
     <!-- build:css css/mains.css -->
     <link rel="stylesheet" href="css/main.css">
     <!-- endbuild -->
+    <!-- build:css css/media.css -->
+    <link rel="stylesheet" href="css/media.css">
+    <!-- endbuild -->
 </head>
 
 <body>
-    <div class="container">
-      <header>
+
+    <header class="nav-height">
+      <div class="container">
+        <div class="header-aligner">
           <div class="logo">
             <img src="img/logo.svg" alt="logo" />
           </div>
@@ -26,12 +31,20 @@
               <li>Contact</li>
             </ul>
           </nav>
-      </header>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
 
       <section class="heading-page">
-        <div class="slider">
-          <div class="slide s-1">
-            <img src="img/slides/1.jpg"/>
+        <div class="slider-cont">
+          <div class="slider">
+            <div class="slide s-1">
+              <div class="head-box">
+                <h3>We are a <br> Modern web development & design studio</h3>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -42,14 +55,29 @@
         <div class="container">
 
           <h2 class="sec-title">Projects</h2>
+
           <main>
             <article class="kdclasm right">
               <img src="img/project/kdclasmt-main.jpg" alt="project-1" />
               <div class="desc">
-                <h1>Kdclasm previous website</h1>
-                <p>
-                  First „kdclasm studio” website
-                </p>
+                <div class="desc-marg">
+                  <h2>Kdclasm previous website</h2>
+                  <p>
+                    First „kdclasm studio” website
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="kdclasm left">
+              <img src="img/project/kdclasmt-main.jpg" alt="project-1" />
+              <div class="desc">
+                <div class="desc-marg">
+                  <h2>Kdclasm previous website</h2>
+                  <p>
+                    First „kdclasm studio” website
+                  </p>
+                </div>
               </div>
             </article>
           </main>
@@ -60,12 +88,18 @@
       <div class="container">
 
       <section class="about">
-        <h2 class="sec-title">About</h2>
-        <p>
-          Modern design studio specialized</br>
+        <!-- <h2 class="sec-title">About</h2> -->
+        <div class="logo">
+          <img src="img/logo.svg" alt="logo" />
+          <div class="line"></div>
+        </div>
+        <p class="self-desc">
+          We are Modern Design Studio specialized</br>
           in high-end web development
         </p>
-
+        <p class="bckg-text">
+          WE ARE
+        </p>
       </section>
 
       </div>
@@ -97,24 +131,43 @@
           <form class="ct-form" action="index.html" method="post">
             <fieldset class="ct-name">
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Name">
+              <input class="inpt-text" type="text" id="name" name="name" placeholder="Name">
             </fieldset>
 
             <fieldset class="ct-email">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="Email">
+              <input class="inpt-text" type="email" id="email" name="email" placeholder="Email">
             </fieldset>
 
             <fieldset class="ct-message">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Message"></textarea>
+              <textarea class="inpt-text" id="message" name="message" placeholder="Message"></textarea>
             </fieldset>
-            <input type="submit" name="send" value="Send">
+            <input class="button" type="submit" name="send" value="Send">
           </form>
         </div>
 
         <div class="waves">
 
+          <svg class="editorial"
+           xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 24 150 28"
+           preserveAspectRatio="none">
+          <defs>
+          <path
+            id="gentle-wave"
+             d="m -160,44.4 c 30,0 58,
+                -18 87.7,-18 30.3,0 58.3,
+                18 87.3,18 30,0 58,-18 88,
+                -18 30,0 58,18 88,18 l 0,
+                34.5 -351,0 z" />
+          </defs>
+          <g class="parallax">
+           <use xlink:href="#gentle-wave" x="50" y="0"/>
+           <use xlink:href="#gentle-wave" x="50" y="3"/>
+           <use xlink:href="#gentle-wave" x="50" y="6"/>
+          </g>
+          </svg>
         </div>
 
       </section>
@@ -129,7 +182,13 @@
           </p>
         </div>
         <div class="social-media">
+          <a target="_blank" href="https://www.behance.net/SebastianPob">
+            <img src="img/icons/be.svg" alt="be" id="be" />
+          </a>
 
+          <a target="_blank" href="https://github.com/SebastianPob">
+            <img src="img/icons/github.svg" alt="codepen" id="codepen" />
+          </a>
         </div>
       </footer>
 
